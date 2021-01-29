@@ -1,0 +1,7 @@
+.main {
+  display: grid;
+  grid-template-areas: "nav nav" "mainCategories mainCategories" "sidePanel mainContent";
+  grid-template-rows: max-content max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  background: rgb(236, 241, 255);
+}

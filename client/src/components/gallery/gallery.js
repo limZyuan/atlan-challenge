@@ -4,7 +4,7 @@ import "./gallery.css";
 export default function Gallery({ displayedData }) {
   return (
     <div className="main-content p-3">
-      {displayedData.slice(0, 20).map((each, index) => {
+      {displayedData.map((each, index) => {
         return (
           <div className="card p-2 my-1" key={index}>
             {Object.keys(each).map((key, index) => {
@@ -20,6 +20,7 @@ export default function Gallery({ displayedData }) {
               // data from each key
               let data = each[key];
 
+              // this will be header of each card
               if (index === 0) {
                 return (
                   <React.Fragment key={index}>
@@ -30,6 +31,7 @@ export default function Gallery({ displayedData }) {
                   </React.Fragment>
                 );
               } else {
+                // the other misc details of the card
                 return (
                   <div key={index} className="card-detail">
                     {title}: {data}
@@ -40,7 +42,7 @@ export default function Gallery({ displayedData }) {
           </div>
         );
       })}
-      {/* create gap at bottom */}
+      {/* create gap at the bottom */}
       <div></div>
     </div>
   );

@@ -1,0 +1,93 @@
+/* side panel  */
+.main-sidePanel {
+  grid-area: sidePanel;
+  background-color: var(--secondary-color);
+  flex-direction: column;
+  justify-content: space-between;
+  width: 15rem;
+  overflow: auto;
+
+  /* Glass effect css */
+  background: linear-gradient(
+    127.4deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.6) 98%
+  );
+  border-right: 2px solid white;
+  box-sizing: border-box;
+  backdrop-filter: blur(1px);
+}
+
+/* Side Panel Scrollbar  */
+/* width */
+.main-sidePanel::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.main-sidePanel::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.main-sidePanel::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.main-sidePanel::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* side panel main title  */
+.main-sidePanel h1 {
+  font-size: 1.2rem;
+}
+
+/* side panel main icon  */
+.main-sidePanel i {
+  margin-right: 1rem;
+}
+
+/* each filter facet title  */
+.main-sidePanel h2 {
+  color: var(--secondary-color);
+  margin-bottom: 0.2rem;
+}
+
+/* each filter facet container */
+.main-sidePanel-filter-values-container {
+  max-height: 8rem;
+  width: 12rem;
+  overflow: auto;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* each filter facet value  */
+.main-sidePanel-filter-values {
+  width: 100%;
+  display: flex;
+  color: #333333;
+}
+/* each filter facet value checkbox  */
+.main-sidePanel-filter-checkbox {
+  margin: auto;
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+/* Responsive css for phones */
+@media only screen and (max-width: 600px) {
+  .main-sidePanel {
+    width: 12rem;
+  }
+  .main-sidePanel-filter-values-container {
+    width: 9rem;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .main-sidePanel {
+    display: none;
+  }
+}

@@ -1,26 +1,32 @@
 import React from "react";
 import "./navbar.css";
-import logo from "../../img/ipl.jpg";
+
+// logo
+import logo from "../../img/ipl.webp";
 
 export default function Navbar() {
   return (
     <React.Fragment>
       {/* navbar */}
       <nav className="main-nav flex p-3">
-        <img className="main-nav-img" src={logo} alt="" />
+        {/* logo */}
+        <img title="Home" className="main-nav-img" src={logo} alt="" />
+        {/* search bar */}
         <input
+          title="Search"
           className="main-search"
           type="text"
           placeholder="Search..."
         ></input>
+        {/* other icons */}
         <ul className="flex">
-          <li>
+          <li title="Watchlist">
             <i className="fas fa-tasks"></i>
           </li>
-          <li>
+          <li title="Notifications">
             <i className="fas fa-bell"></i>
           </li>
-          <li>
+          <li title="Profile">
             <i className="fas fa-user"></i>
           </li>
         </ul>

@@ -3,16 +3,8 @@
   grid-area: mainCategories;
   background-color: var(--secondary-color);
   justify-content: space-between;
-
-  /* Glass effect css */
-  background: linear-gradient(
-    127.4deg,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.6) 98.83%
-  );
-  border-right: 2px solid white;
-  box-sizing: border-box;
-  backdrop-filter: blur(1px);
+  background: var(--tertiary-color);
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.26);
 }
 
 .main-categories ul {
@@ -24,7 +16,7 @@
 }
 
 .main-categories li {
-  color: #414141;
+  color: #272727;
 }
 
 .main-categories li:hover {
@@ -33,16 +25,17 @@
 }
 
 .main-categories li i {
-  color: var(--quad-color);
+  color: var(--primary-color);
   font-size: 1.5rem;
   margin-right: 1rem;
 }
 
+/* css of active tab  */
 .selected i {
-  color: var(--secondary-color) !important;
+  color: var(--quad-color) !important;
 }
 
-/* Responsive css for phones */
+/* Responsive css for tablets and phones */
 @media only screen and (max-width: 768px) {
   .main-categories li b {
     display: none;

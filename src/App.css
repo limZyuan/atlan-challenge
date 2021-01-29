@@ -1,3 +1,4 @@
+/* layout of the whole application  */
 .main {
   display: grid;
   grid-template-areas: "nav nav" "mainCategories mainCategories" "sidePanel mainContent";

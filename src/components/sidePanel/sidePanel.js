@@ -1,7 +1,10 @@
 import React from "react";
 import "./sidePanel.css";
 
-export default function SidePanel({ displayedData }) {
+// checkbox component
+import Checkbox from "./checkbox";
+
+export default function SidePanel({ displayedData, filterArg, setFilterArg }) {
   // obtaining all the unique keys for each entry
   let uniqueKeys = [];
 
@@ -35,20 +38,89 @@ export default function SidePanel({ displayedData }) {
     return null;
   });
 
+  // sorting the unique values by the first element
+  Object.keys(uniqueValues).map((each) => {
+    uniqueValues[each].sort();
+    return null;
+  });
+
+  const handleInputChange = (e) => {
+    const target = e.target;
+    const checked = target.checked;
+    const name = target.name;
+
+    // Filter category
+    const key = name.split(",")[0];
+    // Filter category value
+    const value = name.split(",")[1];
+
+    // obtaining the filter arguments from the user and pushing it up to the parent (App.js)
+    const filterArgCopy = { ...filterArg };
+    // if it is checked, we add the filter arguement
+    if (checked) {
+      if (!filterArgCopy[key]) {
+        filterArgCopy[key] = [];
+      }
+      filterArgCopy[key].push(value);
+    } else {
+      // if it is not checked, we remove it from the filter arguement
+      if (filterArgCopy[key].length === 1) {
+        delete filterArgCopy[key];
+      } else {
+        let index = filterArgCopy[key].indexOf(value);
+        filterArgCopy[key].splice(index, 1);
+      }
+    }
+
+    setFilterArg(filterArgCopy);
+  };
+
   return (
     <React.Fragment>
       {/* side panel */}
-      <div className="main-sidePanel flex py-3">
-        <h1>Filters</h1>
+      <div className="main-sidePanel flex py-1">
+        {/* main title */}
+        <h1>
+          <i className="fas fa-filter" />
+          Filters
+        </h1>
+
+        {/* filter categories  */}
         {uniqueKeys.map((key, index) => {
+          // remove main identifier as filter
+          if (index === 0) {
+            return null;
+          }
+
+          // cleaning up the title string
+          let title =
+            key.split("_")[0].charAt(0).toUpperCase() +
+            key.split("_")[0].slice(1);
+
+          if (key.split("_")[1]) {
+            title = title + " " + key.split("_")[1];
+          }
           return (
-            <div key={index}>
-              <h2>{key}</h2>
-              <ul className="main-sidePanel-filter-values-container flex">
+            <div key={index} className="my-1">
+              <h2>{title}</h2>
+              <div className="main-sidePanel-filter-values-container flex">
                 {uniqueValues[key].map((uniqueValue, index) => {
-                  return <li key={index}>{uniqueValue}</li>;
+                  return (
+                    <label
+                      key={index}
+                      className=" main-sidePanel-filter-values"
+                    >
+                      <Checkbox
+                        index={index}
+                        uniqueValue={uniqueValue}
+                        keyValue={key}
+                        handleInputChange={handleInputChange}
+                      />{" "}
+                      <div>{uniqueValue}</div>
+                    </label>
+                  );
                 })}
-              </ul>
+              </div>
             </div>
           );
         })}

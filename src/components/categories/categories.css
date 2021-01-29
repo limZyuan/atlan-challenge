@@ -1,0 +1,50 @@
+/* main categories  */
+.main-categories {
+  grid-area: mainCategories;
+  background-color: var(--secondary-color);
+  justify-content: space-between;
+
+  /* Glass effect css */
+  background: linear-gradient(
+    127.4deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.6) 98.83%
+  );
+  border-right: 2px solid white;
+  box-sizing: border-box;
+  backdrop-filter: blur(1px);
+}
+
+.main-categories ul {
+  list-style: none;
+  justify-content: space-around;
+  height: 50%;
+  width: 100%;
+  cursor: pointer;
+}
+
+.main-categories li {
+  color: #414141;
+}
+
+.main-categories li:hover {
+  color: black;
+  transform: scale(1.03);
+}
+
+.main-categories li i {
+  color: var(--quad-color);
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.selected i {
+  color: var(--secondary-color) !important;
+}
+
+/* Responsive css for phones */
+@media only screen and (max-width: 768px) {
+  .main-categories li b {
+    display: none;
+  }
+}

@@ -1,0 +1,15 @@
+/* content  */
+.main-content {
+  grid-area: mainContent;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: max-content;
+  overflow: auto;
+}
+.card-header {
+  font-size: 1.2rem;
+}
+.card-detail {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}

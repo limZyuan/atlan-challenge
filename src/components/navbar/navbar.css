@@ -1,0 +1,45 @@
+/* nav */
+
+.main-nav {
+  grid-area: nav;
+  justify-content: space-between;
+  height: 4rem;
+  background-color: white;
+  box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.26);
+}
+
+.main-nav ul {
+  justify-content: space-between;
+  width: 12rem;
+  list-style: none;
+}
+.main-nav li {
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+.main-nav li:hover {
+  color: white;
+  transform: scale(1.02);
+}
+.main-nav li i {
+  font-size: 1.3rem;
+}
+.main-nav-img {
+  height: 3.5rem;
+}
+.main-search {
+  border-radius: 5px;
+  border: 1px solid rgb(192, 192, 192);
+  padding: 0.4rem 1.2rem;
+  width: 20rem;
+  outline: none;
+}
+/* Responsive css for phones */
+@media only screen and (max-width: 768px) {
+  .main-nav {
+    justify-content: space-around;
+  }
+  .main-nav ul {
+    display: none;
+  }
+}

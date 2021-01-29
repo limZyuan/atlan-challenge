@@ -6,7 +6,6 @@ export default function Categories({ tabFunc, currentTab }) {
     ["Players", "fa-user"],
     ["Teams", "fa-users"],
     ["Matches", "fa-futbol"],
-    ["Deliveries", " fa-running"],
   ];
 
   return (

@@ -11,7 +11,6 @@ import Gallery from "./components/gallery/gallery.js";
 import Players from "./data/players.json";
 import Matches from "./data/matches.json";
 import Teams from "./data/teams.json";
-import Deliveries from "./data/deliveries.json";
 
 function App() {
   const [currentTab, setCurrentTab] = useState("Players");
@@ -29,8 +28,6 @@ function App() {
     setDisplayedData(Matches);
   } else if (currentTab === "Teams" && displayedData !== Teams) {
     setDisplayedData(Teams);
-  } else if (currentTab === "Deliveries" && displayedData !== Deliveries) {
-    setDisplayedData(Deliveries);
   }
 
   return (
